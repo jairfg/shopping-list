@@ -1,0 +1,19 @@
+<div id="<%= @date %>">
+  <h3><%= @date.strftime("%A, %d de %B de %Y") %></h3>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Store name</th>
+        <th>Store section</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Purchased</th>
+      </tr>
+    </thead>
+    <tbody id="body-<%= @date %>" >
+     <% @products.each do |product| %>
+        <%= render ProductCardComponent.new(product) %>
+     <% end %>
+    </tbody>
+  </table>
+</div>

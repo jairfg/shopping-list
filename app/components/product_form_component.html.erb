@@ -1,0 +1,28 @@
+<div class="form-container">
+  <%= form_with(model: @product) do |form| %>
+    <div id="message"></div>
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :store_section_id %>
+      <%= form.collection_select(:store_section_id,  StoreSection.all, :id, :name, { include_blank: "Select Store Section" }, { class: "form-control" }) %>
+    </div>
+    <div class="form-group">
+      <%= form.label :store_name %>
+      <%= form.text_area :store_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, step: "1", min: "1", pattern: "[1-9][0-9]*", required: true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :purchase_date %>
+      <%= form.date_field :purchase_date, required: true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.submit "Save", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

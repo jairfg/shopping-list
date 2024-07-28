@@ -1,0 +1,10 @@
+<tr id="<%= dom_id @product %>">
+    <td><%= @product.store_name %></td>
+    <td><%= @product.store_section.name %></td>
+    <td><%= @product.name %></td>
+    <td><%= @product.quantity %></td>
+    <td >
+    <%= check_box_tag :completed, @product.purchased, @product.purchased , 
+        data: {id: @product.id, controller: "product", action: "product#check_purchased"} %>
+    </td>
+</tr>

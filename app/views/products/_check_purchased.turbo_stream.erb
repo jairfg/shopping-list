@@ -1,0 +1,2 @@
+<%= turbo_stream.remove dom_id(product) %>
+<%= turbo_stream.remove "#{product.purchase_date}" unless pending_purchase_for_date %>

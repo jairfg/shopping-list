@@ -1,0 +1,11 @@
+<%= turbo_stream.update "message" do %>
+  <% if @product.errors.any? %>
+    <ul>
+      <% @product.errors.full_messages.each do |error| %>
+        <li class="alert-danger"><%= error %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="alert-success">Creado correctamente</p>
+  <% end %>
+<% end %>

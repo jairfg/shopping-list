@@ -1,0 +1,5 @@
+<div id="list_products">
+  <% @hash_date_products.each do |date, products| %>
+    <%= render(GroupOfProductsComponent.new(date, products)) %>
+  <% end %>
+</div>
